@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webfejlproject": {
+      "hosting": {
+        "WebfejlProject": [
+          "webfejlproject"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webfejlproject"
+  }
+}

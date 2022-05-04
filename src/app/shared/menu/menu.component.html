@@ -1,6 +1,9 @@
 <mat-nav-list>
-    <a mat-list-item routerLink="/login" (click)="close()">
+    <a mat-list-item routerLink="/login" (click)="close()" *ngIf="!loggedInUser">
         <span>Login</span>
+    </a>
+    <a mat-list-item routerLink="/login" (click)="close()" *ngIf="loggedInUser">
+        <span>Logout</span>
     </a>
     <a mat-list-item routerLink="/signup" (click)="close()">
         <span>Register</span>
