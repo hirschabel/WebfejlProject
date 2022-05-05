@@ -1,1 +1,27 @@
-<p>main works!</p>
+<div class="div-flex">
+    <form>
+<mat-form-field>
+<mat-label for="search">search: </mat-label>
+<input matInput type="text" formControlName="search"/>
+</mat-form-field>
+</form>
+</div>
+<table *ngFor="let item of itemObject">
+    <tr>
+        <td class="left_top_bottom"><app-image-viewer [imageInput]='item'></app-image-viewer></td>
+        <td class="right_top_bottom">
+            <h1>{{item.name}}</h1>
+            <h3>{{item.description}}</h3>
+            <p>{{item.tag}}</p>
+        </td>
+    </tr>
+</table>
+
+<!--
+<div *ngFor="let item of itemObject">
+    <app-image-viewer [imageInput]='item'></app-image-viewer>
+    <p>{{item.name}}</p>
+    <p>{{item.description}}</p>
+    <p>{{item.tag}}</p>
+</div>
+-->

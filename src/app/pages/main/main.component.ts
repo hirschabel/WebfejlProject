@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from 'src/app/shared/models/Item';
+import { MainService } from 'src/app/shared/services/main.service';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  itemObject?: Array<Item>;
+
+  constructor(private mainService: MainService) { }
 
   ngOnInit(): void {
+    this.mainService.loadItem().subscribe((data: Array<Item>) => {
+      this.itemObject = data;
+
+    })
   }
+
+  
 
 }

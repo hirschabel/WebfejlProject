@@ -1,0 +1,34 @@
+.left_top_bottom {
+    border-left: 1pt solid;
+    border-top: 1pt solid;
+    border-bottom: 1pt solid;
+    border-right: 1pt solid;
+}
+.right_top_bottom {
+    border-right: 1pt solid;
+    border-top: 1pt solid;
+    border-bottom: 1pt solid;
+    border-left: 1pt solid;
+}
+
+.div-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.buttons {
+    padding: 5px;
+}
+
+button {
+    width: 100px;
+}
+
+form {
+    display: inline-grid;
+    width: 50%;
+    align-self: center;
+}
