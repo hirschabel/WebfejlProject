@@ -35,7 +35,7 @@ export class ForumComponent implements OnInit, OnChanges {
   createForm(model: Post) {
     let formGroup = this.fb.group(model);
     formGroup.get('username')?.addValidators([Validators.required]);
-    formGroup.get('comment')?.addValidators([Validators.required, Validators.minLength(10)]);
+    formGroup.get('content')?.addValidators([Validators.required, Validators.minLength(10)]);
     return formGroup;
   }
 
