@@ -1,6 +1,6 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, RouterLinkWithHref } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Post } from 'src/app/shared/models/Post';
 import { User } from 'src/app/shared/models/User';
 import { ForumService } from 'src/app/shared/services/forum.service';

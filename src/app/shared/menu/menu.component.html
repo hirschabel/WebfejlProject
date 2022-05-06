@@ -14,4 +14,7 @@
     <a mat-list-item routerLink="/forum" (click)="close()">
         <span>Fórum</span>
     </a>
+    <a mat-list-item routerLink="/profile" (click)="close()" *ngIf="loggedInUser">
+        <span>Profil</span>
+    </a>
 </mat-nav-list>

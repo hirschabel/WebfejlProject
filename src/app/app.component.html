@@ -17,7 +17,7 @@
                    <li><a routerLink="/signup" *ngIf="!loggedInUser">Regisztráció</a></li> 
                    <li><a routerLink="/main">Árukereső</a></li>
                    <li><a routerLink="/forum">Fórum</a></li>
-                   <li><a routerLink="/profile">Profil</a></li>
+                   <li *ngIf="loggedInUser"><a routerLink="/profile">Profil</a></li>
                 </ul>
             </div>
         </mat-toolbar>

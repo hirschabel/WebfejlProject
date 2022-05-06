@@ -1,1 +1,13 @@
-<p>profile works!</p>
+<div class="main_component">
+    <div class="div-flex">
+        <h1>Profil módosítása</h1>
+            <label for="name">Új felhasználónév:</label>
+            <input matInput type="text" [formControl]="username" [value]="user?.username"/>
+            <div>
+                <span class="buttons"><button mat-raised-button color="primary" type="submit" (click)="onUpdateUser()">Módosítás</button></span>
+                </div>  
+                <div>
+                <span class="buttons"><button mat-raised-button color="warn" (click)="onDeleteUser()">Felhasználó törlése</button></span>
+            </div>
+    </div>
+</div>
