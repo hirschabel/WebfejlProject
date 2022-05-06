@@ -26,7 +26,7 @@ export class ForumComponent implements OnInit, OnChanges {
   constructor(private fb: FormBuilder, private userService: UserService, private forumService: ForumService, private router: Router) { }
 
   
-  ngOnChanges(): void {
+  ngOnChanges(): void { // lifecycle
     this.forumService.getAll().subscribe(post => {
       this.posts = post;
     })
@@ -39,7 +39,7 @@ export class ForumComponent implements OnInit, OnChanges {
     return formGroup;
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { // lifecycle
     const user = JSON.parse(localStorage.getItem('user') as string) as firebase.default.User;
     this.userService.getById(user.uid).subscribe(data => {
       this.user = data;

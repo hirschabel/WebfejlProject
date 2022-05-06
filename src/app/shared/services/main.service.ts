@@ -16,11 +16,11 @@ export class MainService {
   constructor(private afs: AngularFirestore, private storage: AngularFireStorage) { }
   
   loadItem(): Observable<Array<Item>> {
-     return this.afs.collection<Item>(this.collectionName1, ref => ref.orderBy('name', 'asc')).valueChanges();
+     return this.afs.collection<Item>(this.collectionName1, ref => ref.orderBy('name', 'asc')).valueChanges(); // firestore komplex (order by)
   }
 
   loadCategory(): Observable<Array<Category>> {
-    return this.afs.collection<Category>(this.collectionName2, ref => ref.orderBy('prio', 'asc')).valueChanges();
+    return this.afs.collection<Category>(this.collectionName2, ref => ref.orderBy('prio', 'asc')).valueChanges(); // firestore komplex (order by)
   }
 
   loadImage(imgUrl: string) {

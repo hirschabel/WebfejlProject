@@ -9,7 +9,7 @@ import { MainService } from 'src/app/shared/services/main.service';
 })
 export class ImageViewerComponent implements OnInit {
 
-  @Input() imageInput?: Item;
+  @Input() imageInput?: Item; //input
   loadedImage?: string;
 
   constructor(private mainService: MainService) { }
