@@ -1,10 +1,18 @@
 <div class="div-flex">
     <form>
-<mat-form-field>
-<mat-label for="search">search: </mat-label>
-<input matInput type="text" formControlName="search"/>
-</mat-form-field>
-</form>
+        <mat-form-field [(ngModel)]="searchText">
+            <mat-label for="search">Search: </mat-label>
+            <input matInput type="text" formControlName="search" #test (change)="onChange(test.value)"/>
+        </mat-form-field>
+    </form>
+    <div>
+    <button mat-raised-button (click)="onReverse()" color="primary">Reverse</button>
+    <mat-form-field appearance="fill">
+        <mat-select (selectionChange)="categoryChanged()" [(ngModel)]="chosenCategory">
+            <mat-option *ngFor="let obj of categoryObject"  [value]="obj.name">{{obj.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
 </div>
 <table *ngFor="let item of itemObject">
     <tr>
@@ -16,12 +24,3 @@
         </td>
     </tr>
 </table>
-
-<!--
-<div *ngFor="let item of itemObject">
-    <app-image-viewer [imageInput]='item'></app-image-viewer>
-    <p>{{item.name}}</p>
-    <p>{{item.description}}</p>
-    <p>{{item.tag}}</p>
-</div>
--->

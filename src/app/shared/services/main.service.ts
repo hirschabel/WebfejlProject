@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { Item } from '../models/Item';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { Category } from '../models/Category';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,11 @@ export class MainService {
   constructor(private afs: AngularFirestore, private storage: AngularFireStorage) { }
   
   loadItem(): Observable<Array<Item>> {
-    return this.afs.collection<Item>('Items').valueChanges();
+     return this.afs.collection<Item>('Items').valueChanges();
+  }
+
+  loadCategory(): Observable<Array<Category>> {
+    return this.afs.collection<Category>('Categories').valueChanges();
   }
 
   loadImage(imgUrl: string) {
