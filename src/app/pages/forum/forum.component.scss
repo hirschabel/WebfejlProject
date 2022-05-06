@@ -1,0 +1,25 @@
+.main_div {
+    margin-left: 20px;
+}
+
+.normal_div {
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.main_component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}

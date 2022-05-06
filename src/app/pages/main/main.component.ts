@@ -48,7 +48,7 @@ export class MainComponent implements OnInit {
   categoryChanged() {
     this.itemObject = this.itemObjectFull;
     console.log(this.chosenCategory)
-    if (this.chosenCategory != undefined) {
+    if (this.chosenCategory != "Minden") {
       this.itemObject = this.itemObject?.filter(i => i.tag == this.chosenCategory);
     }
   }

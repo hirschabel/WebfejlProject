@@ -12,10 +12,12 @@
             <div>Webfejlesztés project</div>
             <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
                 <ul fxLayout fxLayoutGap="10px" class="navig">
-                   <li *ngIf="!(loggedInUser)"><a routerLink="/login">Login</a></li>
-                   <li *ngIf="loggedInUser"><a routerLink="/login" (click)="logout()">Logout</a></li> 
-                   <li><a routerLink="/signup">Register</a></li> 
-                   <li><a routerLink="/main">Main</a></li>
+                   <li *ngIf="!(loggedInUser)"><a routerLink="/login">Bejelentkezés</a></li>
+                   <li *ngIf="loggedInUser"><a routerLink="/login" (click)="logout()" >Kijelentkezés</a></li> 
+                   <li><a routerLink="/signup" *ngIf="!loggedInUser">Regisztráció</a></li> 
+                   <li><a routerLink="/main">Árukereső</a></li>
+                   <li><a routerLink="/forum">Fórum</a></li>
+                   <li><a routerLink="/profile">Profil</a></li>
                 </ul>
             </div>
         </mat-toolbar>

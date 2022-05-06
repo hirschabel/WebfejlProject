@@ -10,14 +10,17 @@ import { Category } from '../models/Category';
 })
 export class MainService {
 
+  collectionName1 = 'Items';
+  collectionName2 = 'Categories';
+
   constructor(private afs: AngularFirestore, private storage: AngularFireStorage) { }
   
   loadItem(): Observable<Array<Item>> {
-     return this.afs.collection<Item>('Items').valueChanges();
+     return this.afs.collection<Item>(this.collectionName1, ref => ref.orderBy('name', 'asc')).valueChanges();
   }
 
   loadCategory(): Observable<Array<Category>> {
-    return this.afs.collection<Category>('Categories').valueChanges();
+    return this.afs.collection<Category>(this.collectionName2, ref => ref.orderBy('prio', 'asc')).valueChanges();
   }
 
   loadImage(imgUrl: string) {

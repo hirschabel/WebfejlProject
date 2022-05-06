@@ -1,12 +1,12 @@
 <div class="div-flex">
     <form>
         <mat-form-field [(ngModel)]="searchText">
-            <mat-label for="search">Search: </mat-label>
+            <mat-label for="search">Keresés: </mat-label>
             <input matInput type="text" formControlName="search" #test (change)="onChange(test.value)"/>
         </mat-form-field>
     </form>
     <div>
-    <button mat-raised-button (click)="onReverse()" color="primary">Reverse</button>
+    <button mat-raised-button (click)="onReverse()" color="primary">Fordított sorrend</button>
     <mat-form-field appearance="fill">
         <mat-select (selectionChange)="categoryChanged()" [(ngModel)]="chosenCategory">
             <mat-option *ngFor="let obj of categoryObject"  [value]="obj.name">{{obj.name}}</mat-option>

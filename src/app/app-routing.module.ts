@@ -17,8 +17,18 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
   },
   {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule),
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'signup',
     loadChildren: () => import('./pages/signup/signup.module').then(m => m.SignupModule)
+  },
+  {
+    path: 'forum',
+    loadChildren: () => import('./pages/forum/forum.module').then(m => m.ForumModule),
+    canActivate: [AuthGuard]
   },
   {
     path: '',

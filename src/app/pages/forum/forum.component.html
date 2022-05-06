@@ -1,0 +1,33 @@
+<div class="main_component">
+    <h1>Fórum</h1>
+</div>
+<div class="main_div">
+<form [formGroup]="postForm" (ngSubmit)="addPost()">
+    <div>
+        <mat-form-field>
+            <mat-label for="content">Poszt: </mat-label>
+            <textarea matInput rows="10" cols="50" formControlName="content"></textarea>
+        </mat-form-field>
+    </div>
+
+    <div class="break"></div>
+    <div>
+        <button mat-raised-button color="primary" type="submit" >Létrehozás</button>
+    </div>
+</form>
+</div>
+<div class="normal_div" *ngIf="posts.length">
+    <table>
+        <tr>
+            <th>Felhasználó</th>
+            <th>Poszt</th>
+            <th>Időpont</th>
+        </tr>
+        <tr *ngFor="let poszt of posts; let i = index;"
+            [ngStyle]="{'background-color' : i % 2 === 0 ? 'darkcyan' : 'cyan'}">
+            <td>{{poszt.user_name}}</td>
+            <td>{{poszt.content}}</td>
+            <td>{{poszt.date | date}}</td>
+        </tr>
+    </table>
+</div>
