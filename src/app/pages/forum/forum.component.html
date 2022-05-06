@@ -24,7 +24,7 @@
             <th>Időpont</th>
         </tr>
         <tr *ngFor="let poszt of posts; let i = index;"
-            [ngStyle]="{'background-color' : i % 2 === 0 ? 'darkcyan' : 'cyan'}">
+            [ngClass]="i % 2 === 0 ? 'table-header-even' : 'table-header-odd'"> <!-- [[ngClass] attribútum direktíva]-->
             <td>{{poszt.user_name}}</td>
             <td>{{poszt.content}}</td>
             <td>{{poszt.date | date}}</td>

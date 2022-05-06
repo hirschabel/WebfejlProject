@@ -14,8 +14,8 @@
     </mat-form-field>
 </div>
 </div>
-<table *ngFor="let item of itemObject">
-    <tr>
+<table>
+    <tr *ngFor="let item of itemObject; let i = index;" [ngStyle]="{'background-color': i % 2 === 0 ? 'blue' : 'red'}"> <!-- [*ngFor strukturális direktíva] [[ngStyle] attribútum direktíva]  -->
         <td class="left_top_bottom"><app-image-viewer [imageInput]='item'></app-image-viewer></td>
         <td class="right_top_bottom">
             <h1>{{item.name}}</h1>
