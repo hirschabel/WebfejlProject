@@ -12,10 +12,10 @@
             <mat-option *ngFor="let obj of categoryObject"  [value]="obj.name">{{obj.name}}</mat-option>
         </mat-select>
     </mat-form-field>
-</div>
-</div>
+    </div>
+
 <table>
-    <tr *ngFor="let item of itemObject; let i = index;" [ngStyle]="{'background-color': i % 2 === 0 ? 'blue' : 'red'}"> <!-- [*ngFor strukturális direktíva] [[ngStyle] attribútum direktíva]  -->
+    <tr *ngFor="let item of itemObject; let i = index;" [ngStyle]="{'background-color': i % 2 === 0 ? '#bebfbb' : '#787877'}"> <!-- [*ngFor strukturális direktíva] [[ngStyle] attribútum direktíva]  -->
         <td class="left_top_bottom"><app-image-viewer [imageInput]='item'></app-image-viewer></td>
         <td class="right_top_bottom">
             <h1>{{item.name}}</h1>
@@ -24,3 +24,4 @@
         </td>
     </tr>
 </table>
+</div>
